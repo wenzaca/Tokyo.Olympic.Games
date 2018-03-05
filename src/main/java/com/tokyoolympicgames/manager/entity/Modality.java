@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Entity that contains the Localization information from the Olympic Game
+ * Entity that contains the Modality information from the Olympic Game
  *
  * @author Wendler Zacariotto
  */
