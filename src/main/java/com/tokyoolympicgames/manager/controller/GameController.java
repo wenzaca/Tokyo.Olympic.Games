@@ -94,7 +94,7 @@ public class GameController {
                 String modalityString) {
 
 
-        Optional<Modality> modality = this.gameService.findModality(modalityString);
+        Optional<Modality> modality = this.gameService.findModality(modalityString.toUpperCase());
 
         if (modality.isPresent()) {
             return new ResponseEntity<>(this.gameService.findByModalityOrderByBeginTime(modality.get()),
