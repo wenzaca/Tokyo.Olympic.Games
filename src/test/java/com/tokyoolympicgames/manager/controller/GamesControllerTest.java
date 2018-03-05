@@ -205,9 +205,9 @@ public class GamesControllerTest {
     public void testGetGameWithFilter() {
 
         List<Game> games = Arrays.asList(game);
-        Mockito.when(service.findByModalityOrderByBeginTime(new Modality("Soccer")))
+        Mockito.when(service.findByModalityOrderByBeginTime(new Modality("SOCCER")))
                 .thenReturn(games);
-        Mockito.when(service.findModality("Soccer")).thenReturn(Optional.of(new Modality("Soccer")));
+        Mockito.when(service.findModality("SOCCER")).thenReturn(Optional.of(new Modality("SOCCER")));
 
         Assert.assertEquals(new ResponseEntity<>(games, HttpStatus.OK), controller.getGameTimeDesc("Soccer"));
     }
@@ -218,8 +218,8 @@ public class GamesControllerTest {
         List<Game> games = Arrays.asList(game, game2);
         Mockito.when(service.findAllByOrderByBeginTime())
                 .thenReturn(games);
-        Mockito.when(service.findModality(null)).thenReturn(Optional.empty());
+        Mockito.when(service.findModality("")).thenReturn(Optional.empty());
 
-        Assert.assertEquals(new ResponseEntity<>(games, HttpStatus.OK), controller.getGameTimeDesc(null));
+        Assert.assertEquals(new ResponseEntity<>(games, HttpStatus.OK), controller.getGameTimeDesc(""));
     }
 }
