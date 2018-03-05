@@ -90,7 +90,7 @@ public class GameController {
         @ApiResponse(code = 400, message = "BAD_REQUEST"), @ApiResponse(code = 404, message = "NOT_FOUND"),
         @ApiResponse(code = 500, message = "INTERNAL SERVER ERROR") })
     public ResponseEntity<Object> getGameTimeDesc(
-        @ApiParam(name = "modality", value = "Sport Modality") @RequestParam(required = false, name = "modality")
+        @ApiParam(name = "modality", value = "Sport Modality") @RequestParam(required = false, name = "modality", defaultValue = "")
                 String modalityString) {
 
 
